@@ -1,0 +1,42 @@
+Regular Expression
+	• Use https://regexr.com/
+	• Best Guide https://javascript.info/regular-expressions
+	• In JS we can apply regex multiple ways. One of which is test() it returns a boolean. 
+		○ YOUR_REGEX.test(STRING_TO_BE_TESTED)
+	• Other method is .match() it returns the matched string as the name suggest. It syntax is opposite of .test()
+		○ 'string'.match(/regex/);
+		○ /regex/.test('string');
+	• Exact Comparision - /str/
+	• OR - /str1|str2|str3/
+	• WildCard - dot operator . - /.un/ = fun,pun,run etc - /ra./ = rat, ran,ram
+		○ It is only accountable for one character
+	• Grouping - characters inside Square brackets - /b[aeiou]n/gi = ban,bin,ben,bon,bun
+		○ Range of alphabets and numbers can be provided - [a-z], [s-z0-8], [a-c]
+		○ Negated Character - characters which are not required - add ^ before the group.
+	• Multiple Occurrences
+		○ + means one or more occurrence of preceding token
+		○ * means zero or more occurrence of preceding token
+	
+	• Quantifiers  - https://javascript.info/regexp-greedy-and-lazy
+		○ In the greedy mode (by default) a quantified character is repeated as many times as possible.
+		○ Lazy (?) repeat minimal number of times
+	• Optional character - ?
+		○ Favou?rite = favourite and favorite ( u is optional )
+	• Match Starting of String - use ^ - /^Cal/
+	• Match Ending of String - use $ - /Cal$/
+	• Character Classes
+		○ [a-zA-Z0-9_]  ==  \w
+		○ [^a-zA-Z0-9_]  ==  \W
+		○ [0-9] ==  \d 
+		○ [^0-9] == \D
+		○ [^ \r\t\f\n\v] == \s ( for whitespaces, carriage return, tabs etc )
+		○ [^ \r\t\f\n\v] == \S
+	• Specific number of occurrence = {lower, upper}
+		○ Ohhhh no == /Oh{3,6} no/
+	• Capture Groups
+		○ (expression) represents a group. Each group is numbered in accordingly
+		○ (\d+)(\w+) - we can reuse the first group by \1 or second group by \2 and so on
+		○ "32 32 32" - /^(\d+)\s\1\s\1&/
+	• Usage of flags
+		○ Case insensitive - /str/I
+    ○ Global - /str/g - goes through full string even if one match is found. Means it finds all the matches in the string.
